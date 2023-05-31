@@ -17,7 +17,7 @@ bool isEmpty(Stack *s) {
 }
 
 bool isFull(Stack *s) {
-    return !(p->top < MAX-1);
+    return !(s->top < MAX-1);
 }
 
 void push(Stack *s, int data) {
@@ -39,6 +39,7 @@ int pop(Stack *s) {
         unstacked = s->stack[s->top];
         s->top = s->top - 1;
     }
+    return unstacked;
 }
 
 int topData(Stack *s) {
@@ -54,7 +55,7 @@ void showStack(Stack *s) {
     int i;
 
     for (i = s->top; i >= 0; i--) {
-        printf("Data %d posição %d\n", s->stack[i], i);
+        printf("Data %d position %d\n", s->stack[i], i);
     }
 }
 
